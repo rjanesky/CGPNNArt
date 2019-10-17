@@ -6,7 +6,31 @@
         xmlns:local="clr-namespace:CPPNArt"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Margin="0,25,0,0">
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition Width="37*"/>
+            <ColumnDefinition Width="359*"/>
+            <ColumnDefinition Width="396*"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+
+            <RowDefinition/>
+            <RowDefinition/>
+
+        </Grid.RowDefinitions>
+        <Menu x:Name="mainMenu" Height="25" Margin="0,-25,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3">
+            <MenuItem Header="Settings">
+                <MenuItem x:Name="InitializePopulationMenuItem" Header="Initialize Population" Click="InitializePopulationMenuItem_Click"/>
+                <MenuItem x:Name="ToggleColorMenuItem" Header="Toggle Color" Click="ToggleColorMenuItem_Click"/>
+                <MenuItem x:Name="CreatePalette" Header="Create Palette" Click="CreatePalette_Click" />
+            </MenuItem>
+        </Menu>
+
+        <Image x:Name="Genome1" Grid.Column="0" MouseLeftButtonUp="Genome1_MouseLeftButtonUp" Grid.ColumnSpan="2" MouseRightButtonUp="Genome1_MouseRightButtonUp" />
+        <Image x:Name="Genome2" Grid.Column="2" MouseLeftButtonUp="Genome2_MouseLeftButtonUp" MouseRightButtonUp="Genome2_MouseRightButtonUp" />
+        <Image x:Name="Genome3" Grid.Row="1" Grid.Column="0" MouseLeftButtonUp="Genome3_MouseLeftButtonUp" Grid.ColumnSpan="2" MouseRightButtonUp="Genome3_MouseRightButtonUp" />
+        <Image x:Name="Genome4" Grid.Row="1" Grid.Column="2" MouseLeftButtonUp="Genome4_MouseLeftButtonUp" MouseRightButtonDown="Genome4_MouseRightButtonDown" />
     </Grid>
 </Window>
